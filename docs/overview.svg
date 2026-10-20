@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="820" viewBox="0 0 800 820">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#c2410c" stroke-width="1.5"/></marker></defs>
+<rect width="800" height="820" fill="#faf8f3"/>
+<g font-family="Arial, sans-serif" fill="#1c1a16">
+<text x="30" y="45" font-size="27" font-weight="600">From customer records to useful follow-up</text>
+<text x="30" y="77" font-size="19" fill="#635b50">Conceptual decision flow · synthetic records and generated views</text>
+<g stroke="#d8d0c2" fill="#fffdf8"><rect x="30" y="104" width="740" height="114" rx="14"/><rect x="30" y="260" width="740" height="120" rx="14"/><rect x="30" y="422" width="740" height="120" rx="14"/><rect x="30" y="584" width="740" height="140" rx="14"/></g>
+<text x="52" y="136" font-size="22" font-weight="600">Customer records</text>
+<text x="52" y="169" font-size="21">Product use + settings · meetings + notes + call mentions</text><text x="52" y="199" font-size="21">Account responsibilities + contact roster</text>
+<g fill="none" stroke="#c2410c" stroke-width="2" marker-end="url(#a)"><path d="M400 218V250"/><path d="M400 380V412"/><path d="M400 542V574"/></g>
+<text x="52" y="295" font-size="23" font-weight="600">1 · Understand the account</text>
+<text x="52" y="330" font-size="21">Explain adoption and risk; identify relevant contacts.</text><text x="52" y="360" font-size="21">Keep the evidence and reasons for exclusions visible.</text>
+<text x="52" y="457" font-size="23" font-weight="600">2 · Review what changed</text>
+<text x="52" y="492" font-size="21">Weekly changes, owners, and recorded next steps.</text><text x="52" y="522" font-size="21">Customer-group entries and exits, with their causes.</text>
+<text x="52" y="619" font-size="23" font-weight="600">3 · Decide and coordinate</text>
+<text x="52" y="654" font-size="21">People choose follow-up work.</text><text x="52" y="684" font-size="21">The bot stores proposed assignments; confirmation</text><text x="52" y="713" font-size="21">applies that scope and reports what changed.</text>
+<text x="30" y="765" font-size="19" fill="#635b50">Arrows show the decision process. Report flags do not</text><text x="30" y="793" font-size="19" fill="#635b50">automatically trigger assignments.</text>
+</g></svg>

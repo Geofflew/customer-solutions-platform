@@ -1,0 +1,9 @@
+flowchart LR
+  records["Product use + settings<br/>Meetings + notes + calls<br/>Accounts + contacts"] --> signals["Explain account signals<br/>Adoption, risk, contacts"]
+  signals --> review["Review changes<br/>Weekly report + customer groups"]
+  review --> person["Person chooses follow-up"]
+  person --> proposal["Stored assignment proposal"]
+  proposal --> confirm["Person confirms"]
+  confirm --> assignments["Apply stored assignments"]
+%% Conceptual decision process. Reports do not automatically invoke the bot.
+%% README uses overview.svg rendered to overview.png for controlled layout.

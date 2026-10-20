@@ -1,0 +1,29 @@
+{
+  "name": "customer-solutions-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "generate": "tsx scripts/generate.ts",
+    "scores": "tsx scripts/scores.ts",
+    "render": "tsx scripts/render.ts",
+    "shots": "tsx scripts/shots.ts",
+    "demo": "tsx scripts/demo.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "scrub": "bash scripts/scrub-check.sh"
+  },
+  "dependencies": {
+    "pg": "8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/pg": "8.11.10",
+    "puppeteer": "23.11.1",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
+  }
+}
