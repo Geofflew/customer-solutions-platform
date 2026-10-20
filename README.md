@@ -20,7 +20,7 @@ The challenge is to connect **what the records say, what changed, and what someo
 
 ## Our Answer
 
-The platform derives explainable account signals, presents them in views designed for decisions, and records the scope of confirmed assignments. The runnable implementation uses PostgreSQL, TypeScript calculations, and generated HTML pages. Its chat commands use a small parser; no LLM connection is required.
+The design connects **product use → activation score → custom segment → activation play → follow-up**, so the components help people move from understanding a customer to organizing relevant help. The platform derives explainable account signals, presents them in views designed for decisions, and records the scope of confirmed assignments. The runnable implementation uses PostgreSQL, TypeScript calculations, and generated HTML pages. Its chat commands use a small parser; no LLM connection is required.
 
 ### Make account signals explainable
 
@@ -46,11 +46,19 @@ The overall trend needs the same care. Comparing a changing population can make 
 
 ![Weekly report showing changes, responsibility, and next steps.](docs/screens/status-report.png)
 
-Saved customer groups need a review history too. A **segment** is a saved rule combining signals such as renewal timing, product adoption, and recent executive contact. Each signal distinguishes a match, a non-match, and missing coverage. This implementation conservatively marks a rule as no-data when any referenced signal lacks coverage, even if another branch matches.
+Saved customer groups need a review history too. A **custom segment** is a saved rule combining signals such as renewal timing, product adoption, and recent executive contact. Each signal distinguishes a match, a non-match, and missing coverage. This implementation conservatively marks a rule as no-data when any referenced signal lacks coverage, even if another branch matches.
 
 Manual includes and excludes record the person, date, and reason; excludes take precedence. Comparing current member IDs with the last accepted list reveals entries and exits that an unchanged total would conceal. The review can then explain whether each change came from a signal or a recorded manual decision.
 
 [Weekly report](src/status.ts) · [Signals and membership review](src/segments.ts)
+
+### Connect custom segments to customer plays
+
+The components become more useful when they work together: **product use → activation score → custom segment → activation play → follow-up**. A segment connects what the platform knows about a customer to the response that customer may need.
+
+For example, define a segment for customers with a measured activation score below 70, using the inverse of the registered “activation 70+” signal. Link it to an **activation play**: a repeatable sequence in which an owner reviews the feature breakdown, identifies the adoption gap, offers relevant help, and checks progress later. The breakdown matters: a missing integration calls for different help from an enabled feature that nobody has started using. An unscored account needs investigation, rather than being treated as low activation.
+
+In this design, entering a segment can trigger a play proposal or a follow-up task. Membership changes provide the point at which to act; the play defines the response and its owner. The implementation demonstrates configurable rules over registered signals, membership changes, and confirmed assignments. Connecting segment entry to play execution is an extension, not an automatic workflow currently wired into the demo.
 
 ### Carry a decision into a specific action
 
@@ -68,7 +76,7 @@ This closes a narrow but useful loop: the person can inspect the requested chang
 
 **Focus help where it is needed.** Explained exclusions distinguish intentional product choices from adoption gaps. Visible score changes help people notice deterioration even when an account stays in the same risk band.
 
-**Keep outreach relevant as customers change.** Reviewing who entered or left a saved group helps people update their outreach instead of relying on an old list or an unchanged total.
+**Connect customer needs to repeatable help.** Custom segments provide a reusable way to select customers for activation or other plays. Reviewing membership changes keeps that selection current, while the score breakdown helps tailor the response.
 
 **Make follow-up easier to coordinate.** Visible owners and next steps expose gaps in responsibility. Confirmed assignments preserve the requested changes and show what was applied.
 
