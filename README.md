@@ -62,24 +62,16 @@ This closes a narrow but useful loop: the person can inspect the requested chang
 
 [Proposal and confirmation workflow](src/bot.ts)
 
-## What people gain
+## Benefits
 
-Customer teams can spend less time reconstructing an account's situation. They can see why a score is low, distinguish a deliberate product choice from a usage problem, and identify the people behind a relationship signal.
+**Spend less time preparing for customer conversations.** Product use, relationship evidence, and follow-up responsibilities sit together, so people can understand an account without piecing its story together across reports and notes.
 
-Weekly reviews become a way to direct attention: what moved, which customers entered the list, who owns the follow-up, and where a next step is missing. Confirmed assignments then preserve the decision the person actually made.
+**Focus help where it is needed.** Explained exclusions distinguish intentional product choices from adoption gaps. Visible score changes help people notice deterioration even when an account stays in the same risk band.
 
-## Run and explore
+**Keep outreach relevant as customers change.** Reviewing who entered or left a saved group helps people update their outreach instead of relying on an old list or an unchanged total.
 
-Use Node 22 or later and PostgreSQL 14 or later. Create an empty database for this example: generation and tests recreate its `cs` schema.
+**Make follow-up easier to coordinate.** Visible owners and next steps expose gaps in responsibility. Confirmed assignments preserve the requested changes and show what was applied.
 
-```sh
-export DATABASE_URL=postgres://127.0.0.1:5432/acme_solutions
-pnpm install --frozen-lockfile
-pnpm demo
-pnpm test
-pnpm typecheck
-```
-
-The demo generates synthetic records and writes the HTML pages to `out/`. Open those files locally to inspect the views. [Screenshots](docs/screens.md), [calculation details](docs/mechanisms.md), and the [demo transcript](docs/demo-output.md) provide deeper references. All displayed accounts, people, notes, and measurements come from the [seeded generator](scripts/generate.ts).
+[Run the example](docs/running.md) · [All six screens](docs/screens.md) · [Calculation details](docs/mechanisms.md)
 
 Copyright © 2026 Geoffrey Lew. All rights reserved.
